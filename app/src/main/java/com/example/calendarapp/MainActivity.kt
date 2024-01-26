@@ -105,9 +105,8 @@ class MainActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
     }
 
     override fun onItemClick(position: Int, dayText: String) {
-        if(dayText.equals(""))
+        if(!dayText.equals(""))
         {
-            Log.d("@@@", "!!!")
             val message : String = "Selected date " + dayText + " " + monthYearFromDate(selectedDate)
             Toast.makeText(this, message, Toast.LENGTH_LONG).show()
         }

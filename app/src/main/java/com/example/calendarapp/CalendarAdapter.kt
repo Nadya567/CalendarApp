@@ -1,8 +1,10 @@
 package com.example.calendarapp
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class CalendarAdapter(daysOfMonth : ArrayList<String>, onItemListener: OnItemListener) : RecyclerView.Adapter<CalendarViewHolder>() {
@@ -15,7 +17,7 @@ class CalendarAdapter(daysOfMonth : ArrayList<String>, onItemListener: OnItemLis
         val view : View = layoutInflater.inflate(R.layout.calendar_cell, parent, false)
         val layoutParams : ViewGroup.LayoutParams = view.layoutParams
         layoutParams.height = (parent.height * 0.16).toInt()
-        return CalendarViewHolder(view)
+        return CalendarViewHolder(view, onItemListener)
     }
 
     override fun getItemCount(): Int {
